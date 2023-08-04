@@ -4,3 +4,16 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
+
+module.exports = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'www.startech.com.bd',
+        port: '',
+        // pathname: '/account123/**',
+      },
+    ],
+  },
+}
