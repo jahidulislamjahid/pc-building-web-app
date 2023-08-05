@@ -4,6 +4,9 @@
 const colors = {
   curiousGreen: {
     DEFAULT: "#081621",
+  },
+  curiousYellow: {
+    DEFAULT: "#ffe8a1"
   }
 }
 
@@ -16,7 +19,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        curiousGreen: colors.curiousGreen
+        curiousGreen: colors.curiousGreen,
+        curiousYellow: colors.curiousYellow
       }
     },
   },
