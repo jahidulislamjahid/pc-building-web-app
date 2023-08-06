@@ -27,7 +27,7 @@ const HeroSection = () => {
 
         </div>
         <div>
-          <div className='bg-curiousYellow mx-10 shadow-gray-50 drop-shadow-md mb-5'>
+          <div className='bg-curiousYellow ml-10 shadow-gray-50 drop-shadow-md mb-5'>
             <h1 className='text-black font-semibold text-center text-xl pt-5'>Compare Products</h1>
             <h1 className='text-gray-400 text-center text-sm'>Choose two products and compare</h1>
             <div className='mx-20 py-5'>
@@ -37,7 +37,7 @@ const HeroSection = () => {
             </div>
           </div>
           <div className='mx-auto'>
-            <Image src={a4} className='w-5/6 mx-auto'></Image>
+            <Image src={a4} className='w-11/12 ml-10 drop-shadow-md'></Image>
           </div>
         </div>
       </div>
