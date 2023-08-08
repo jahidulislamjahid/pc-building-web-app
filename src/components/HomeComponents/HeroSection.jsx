@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Carousel from 'nuka-carousel'
 import a1 from '../../assets/asset1.webp'
 import a2 from '../../assets/asset2.webp'
@@ -6,9 +6,20 @@ import a3 from '../../assets/asset3.webp'
 import a4 from '../../assets/asset4.webp'
 import Image from 'next/image'
 import Marquee from 'react-fast-marquee'
+import { ProductCard } from '../Products/ProductCard'
 
 
 const HeroSection = () => {
+
+  const [productsList, setproductList] = useState([])
+  useEffect(() => {
+    fetch('/api/rogReboot')
+      .then((response) => response.json())
+      .then((data) => setproductList(data))
+      .catch((error) => console.error('Error fetching data:', error));
+  }, []);
+
+
   return (
     <div className='container mx-auto my-5' >
       <div className='grid grid-cols-3 mb-5 gap-5 justify-center'>
@@ -33,7 +44,7 @@ const HeroSection = () => {
             <div className='mx-20 py-5'>
               <input type="text" placeholder="Type here" className="input input-bordered input-md w-full max-w-xs my-2 rounded-md" />
               <input type="text" placeholder="Type here" className="input input-bordered input-md w-full max-w-xs my-2 rounded-md" />
-              <button className='btn btn-ghost bg-curiousGreen text-white font-semibold rounded-md hover:text-black my-2 mx-10'>View Comparison</button>
+              <button className='btn btn-ghost bg-transparent outline-blue-400 border-blue-400 text-blue-900 font-semibold rounded-md hover:bg-blue-900 hover:text-white my-2 w-full '>View Comparison</button>
             </div>
           </div>
           <div className='mx-auto'>
@@ -47,6 +58,11 @@ const HeroSection = () => {
       >
         This is the hero section of the Homepage
       </Marquee>
+      <div className='grid grid-cols-4 gap-5 my-5'>
+        {productsList?.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        )).slice(0, 20)}
+      </div>
     </div>
   )
 }
