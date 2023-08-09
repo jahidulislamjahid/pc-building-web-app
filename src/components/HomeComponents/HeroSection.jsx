@@ -7,6 +7,7 @@ import a4 from '../../assets/asset4.webp'
 import Image from 'next/image'
 import Marquee from 'react-fast-marquee'
 import { ProductCard } from '../Products/ProductCard'
+import Link from 'next/link'
 
 
 const HeroSection = () => {
@@ -21,7 +22,7 @@ const HeroSection = () => {
 
 
   return (
-    <div className='container mx-auto my-5' >
+    <div className='container mx-auto my-5 ' >
       <div className='grid grid-cols-3 mb-5 gap-5 justify-center'>
         <div className='col-span-2'>
           <Carousel
@@ -58,10 +59,19 @@ const HeroSection = () => {
       >
         This is the hero section of the Homepage
       </Marquee>
+      <div>
+        <h1 className='text-3xl text-center font-bold mt-5'>Featured Products</h1>
+        <h1 className='text-center font-medium mb-5'>Check & Get Desired Products</h1>
+      </div>
       <div className='grid grid-cols-4 gap-5 my-5'>
         {productsList?.map((product) => (
           <ProductCard key={product.id} product={product} />
         )).slice(0, 20)}
+      </div>
+      <div className='flex mx-auto'>
+        <Link href='/products' className='mx-auto'>
+          <button className='btn btn-ghost bg-curiousGreen text-white border rounded-md hover:text-black'>See All Products</button>
+        </Link>
       </div>
     </div>
   )

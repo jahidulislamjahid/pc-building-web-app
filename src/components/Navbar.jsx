@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 
@@ -5,7 +6,9 @@ const Navbar = () => {
   return (
     <div className="navbar bg-curiousGreen text-white">
       <div className="flex-1">
-        <a className="btn btn-ghost normal-case text-xl">Rog Reboot</a>
+        <Link href='/'>
+          <button className="btn btn-ghost normal-case text-xl">Rog Reboot</button>
+        </Link>
       </div>
       <div className="flex-none">
         <div className="dropdown dropdown-end">
