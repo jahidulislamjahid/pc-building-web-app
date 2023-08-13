@@ -5,15 +5,15 @@ const initialState = {
   user: null,
 };
 
-const pcBuilderSlice = createSlice({
-  name: "pcBuilder",
+const pcBuildSlice = createSlice({
+  name: "pc_build",
   initialState,
   reducers: {
     addToBuilder: (state, action) => {
       state.components.push(action.payload);
     },
 
-    removeFromBUild: (state, action) => {
+    removeToBUild: (state, action) => {
       state.components = state.components.filter(
         (product) => product.id !== action.payload
       );
@@ -25,6 +25,6 @@ const pcBuilderSlice = createSlice({
   },
 });
 
-export const { addToBuilder, removeFromBUild, removeALlBuildComponents } =
-  pcBuilderSlice.actions;
-export default pcBuilderSlice.reducer;
+export const { addToBuilder, removeToBUild, removeALlBuildComponents } =
+  pcBuildSlice.actions;
+export default pcBuildSlice.reducer;

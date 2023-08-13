@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { apiSlice } from "./features/api/apiSlice";
-import pcBuildingReducer from "./features/pcBuilder/pcBuilderSlice";
+import pcBuildReducer from "./features/pc_build/pcBuildSlice";
 
 export const store = configureStore({
   reducer: {
     [apiSlice.reducerPath]: apiSlice.reducer,
-    pcBuilder: pcBuildingReducer,
+    pcBuild: pcBuildReducer,
   },
   devTools: process.env.NODE_ENV !== "production",
   middleware: (getDefaultMiddlewares) =>

@@ -1,10 +1,10 @@
+import { IconStarFilled, IconStarOutline } from "@/assets/icons";
 import Description from "@/components/Description";
 import RelatedProduct from "@/components/RelatedProduct";
 import Review from "@/components/Review";
 import Specification from "@/components/Specification";
 import Head from "next/head";
 import Image from "next/image";
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 const ProductDetails = ({ product }) => {
   const {
@@ -86,11 +86,11 @@ const ProductDetails = ({ product }) => {
                 <p>Rating </p>
                 <div className="text-yellow-400 ml-2 flex items-center">
                   {[...Array(roundedRating)]?.map((_, index) => (
-                    <AiFillStar key={index} />
+                    <IconStarFilled key={index} />
                   ))}
                   {[...Array(Math.max(5 - roundedRating, 0))].map(
                     (_, index) => (
-                      <AiOutlineStar key={index} />
+                      <IconStarOutline key={index} />
                     )
                   )}
                 </div>
@@ -133,6 +133,7 @@ export default ProductDetails;
 export async function getStaticPaths() {
   try {
     const res = await fetch(
+      // `http://localhost:3000/api/products`
       `${process.env.NEXT_PUBLIC_NEXT_APP_URL}/api/products`
     );
     const productsRes = await res.json();
@@ -157,9 +158,12 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const { productId } = params;
 
+
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_NEXT_APP_URL
+      // `http://localhost:3000/api/products/${productId.toString()}`
+      `${
+        process.env.NEXT_PUBLIC_NEXT_APP_URL
       }/api/products/${productId.toString()}`
     );
 
