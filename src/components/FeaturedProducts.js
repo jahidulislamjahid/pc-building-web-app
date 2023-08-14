@@ -73,9 +73,8 @@ const FeaturedProducts = ({ products }) => {
                       query: { category: name },
                     })
                   }
-                  className={`flex flex-col justify-center items-center p-5 rounded-md border text-2xl shadow-md hover:text-rose-400 duration-300 ${
-                    name === query?.category && "text-rose-400"
-                  }`}
+                  className={`flex flex-col justify-center items-center p-5 rounded-md border text-2xl shadow-md hover:text-rose-400 duration-300 ${name === query?.category && "text-rose-400"
+                    }`}
                 >
                   {logo}
                   <p className="font-bold text-sm p-1 ">{name}</p>

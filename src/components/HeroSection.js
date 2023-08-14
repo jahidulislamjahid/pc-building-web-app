@@ -5,8 +5,6 @@ import a3 from '../assets/asset3.webp'
 import a4 from '../assets/asset4.webp'
 import Image from 'next/image'
 import Marquee from 'react-fast-marquee'
-import Link from 'next/link'
-import ProductCard from './ProductCard'
 
 const HeroSection = () => {
 
@@ -46,7 +44,7 @@ const HeroSection = () => {
         speed={120}
         className="bg-base-200 text-lg font-semibold py-1 border-0 rounded-full"
       >
-        Our All Outlets are open from 10:00 AM to 10:00 PM Everydeay except Public Holidays
+        All Our Outlets are open from 10:00 AM to 10:00 PM Everydeay except Public Holidays
       </Marquee>
     </div>
   );
