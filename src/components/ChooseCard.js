@@ -7,7 +7,7 @@ const ChooseCard = () => {
     <div className="flex justify-between items-center border shadow-md rounded-md my-4">
       <div className="flex items-center">
         <Image
-          src={}
+          src="#"
           width={150}
           height={150}
           alt=""
